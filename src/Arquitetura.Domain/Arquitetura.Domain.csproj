@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBB1969C-9276-4EED-BD26-A0497ACC95B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Arquitetura.Domain</RootNamespace>
+    <AssemblyName>Arquitetura.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net453\DomainValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Interfaces\Repositories\IRepository.cs" />
+    <Compile Include="Common\Models\Entity.cs" />
+    <Compile Include="Modules\ProductManagement\Interfaces\Repositories\IProductRepository.cs" />
+    <Compile Include="Modules\ProductManagement\Interfaces\Services\IProductService.cs" />
+    <Compile Include="Modules\ProductManagement\Models\Product.cs" />
+    <Compile Include="Modules\ProductManagement\Services\ProductService.cs" />
+    <Compile Include="Modules\ProductManagement\Specifications\ProductNameIsMandatorySpecification.cs" />
+    <Compile Include="Modules\ProductManagement\Specifications\ProductQuantityMustBeGreaterThanZeroSpecification.cs" />
+    <Compile Include="Modules\ProductManagement\Specifications\ProductValueMustBeGreaterThanZeroSpecification.cs" />
+    <Compile Include="Modules\ProductManagement\Validations\ProductIsAbleToBeAddedValidation.cs" />
+    <Compile Include="Modules\ProductManagement\Validations\ProductIsConsistentValidation.cs" />
+    <Compile Include="Modules\UsersManager\Interfaces\Repositories\IUserRepository.cs" />
+    <Compile Include="Modules\UsersManager\Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\ProductManagement\ValueObjects\" />
+    <Folder Include="Modules\UsersManager\Services\" />
+    <Folder Include="Modules\UsersManager\Specifications\" />
+    <Folder Include="Modules\UsersManager\Validations\" />
+    <Folder Include="Modules\UsersManager\ValueObjects\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
