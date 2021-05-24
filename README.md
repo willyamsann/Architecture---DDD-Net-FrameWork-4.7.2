@@ -11,6 +11,9 @@ Possui um frontend criado apenas para fins demonstrativos.
 ## CRUD de exemplo
 Esta arquitetura possui um cadastro completo de produtos como exemplo de código, inclusive com a aplicação de regras de negócio e controle de níveis de acesso, entre outras coisas.
 
+## API
+Foi criado uma API de teste, documentada com Swagger.
+
 ## Padrões utilizados
 - DDD - Domain Driven Design
 - SOLID (Single Responsability, Open Close, Liskov Substitution, Interface Segregation and Dependency Invertion)
