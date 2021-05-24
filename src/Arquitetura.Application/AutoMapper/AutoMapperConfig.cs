@@ -11,6 +11,8 @@ namespace Arquitetura.Application.AutoMapper
                 x.AddProfile<DomainToViewModelMappingProfile>();
                 x.AddProfile<ViewModelToDomainMappingProfile>();
             });
+
+            Mapper.AssertConfigurationIsValid();
         }
     }
 }
